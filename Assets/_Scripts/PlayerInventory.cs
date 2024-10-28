@@ -42,5 +42,16 @@ public class PlayerInventory : MonoBehaviour
 			// destroy the star object that we collided with
 			Destroy(hit.gameObject);
 		}
+		if (hit.CompareTag("Heart"))
+		{
+			// increment the total by 1
+			totalStars--;
+
+			// update the UI display of our star carrying status
+			playerInventoryDisplay.OnChangeStarTotal(totalStars);
+
+			// destroy the star object that we collided with
+			Destroy(hit.gameObject);
+		}
 	}
 }
